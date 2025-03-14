@@ -64,6 +64,3 @@ Modela el flujo de inicio de sesión en un sistema web. Los elementos involucrad
 ✅ Usa los tipos de mensajes adecuados (`->`, `-->`, `-->>`).
 
 ---
-
-🎯 **Objetivo:**
-Estos ejercicios están diseñados para mejorar tu capacidad de modelado UML y comprender la representación visual de sistemas y sus interacciones. ¡Buena suerte! 🚀
