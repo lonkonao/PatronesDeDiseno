@@ -1,66 +1,46 @@
-# 📌 Ejercicios UML
+# Caso Práctico: Sistema de Gestión de Bodega de Insumos Médicos
 
-## 🖥️ 1. Ejercicio: Diagrama de Clases
+## Contexto
+Una empresa de distribución de insumos médicos cuenta con una **bodega central** y **dos sucursales**.  
+La bodega es responsable de recibir productos de distintos **proveedores**, almacenarlos y distribuirlos a las **sucursales** según su demanda.  
 
-### 📌 Formulación:
-
-Un restaurante necesita un sistema para gestionar sus pedidos. Se deben modelar las siguientes clases:
-
-- **Cliente**
-- **Pedido**
-- **Producto**
-- **Restaurante**
-
-### 📌 Instrucciones:
-
-✅ Dibuja un **Diagrama de Clases UML** con estas entidades.
-✅ Agrega los **atributos y métodos** adecuados en cada clase.
-✅ Establece las **relaciones correctas** entre ellas (**Asociación, Agregación, Composición, etc.**).
+Cada sucursal puede **solicitar productos** a la bodega central cuando su **stock está bajo**, y la bodega debe gestionar los envíos.  
+Además, la empresa necesita un **control detallado del inventario** en cada ubicación y **registrar las ventas** de las sucursales.  
 
 ---
 
-## 📖 2. Ejercicio: Diagrama de Casos de Uso
+## Problemática
+Actualmente, la empresa **no cuenta con un sistema automatizado** para la gestión de inventarios y pedidos.  
+Esto genera problemas como:  
 
-### 📌 Formulación:
-
-Modela los casos de uso para un sistema de biblioteca. Los actores principales son:
-
-- **Usuario**
-- **Bibliotecario**
-
-### 📌 Instrucciones:
-
-✅ Dibuja un **Diagrama de Casos de Uso UML**.
-✅ Representa los siguientes casos de uso:
-
-- 📚 **Buscar libro**
-- 📖 **Pedir préstamo**
-- 📤 **Devolver libro**
-- 📦 **Administrar inventario**
-  ✅ Usa **Asociación**, **Inclusión** (`<<include>>`) y **Extensión** (`<<extend>>`) cuando sea necesario.
+- **Falta de control sobre el stock** en la bodega y sucursales.  
+- **Retrasos en la reposición** de productos en las sucursales.  
+- **Errores en la distribución** de insumos médicos.  
+- **Poca visibilidad** sobre las ventas y movimientos de productos.  
 
 ---
 
-## 🔄 3. Ejercicio: Diagrama de Secuencia
+## Lo que hay que hacer  
+Se requiere diseñar un **sistema de gestión** de la bodega y las sucursales, modelando los siguientes **diagramas UML**:  
 
-### 📌 Formulación:
+### 1️⃣ Diagrama de Clases  
+- Definir clases como **BodegaCentral, Sucursal, Producto, Pedido, Proveedor, Venta**.  
+- Establecer **relaciones** entre ellas (**asociaciones, agregaciones o composiciones**).  
 
-Modela el flujo de inicio de sesión en un sistema web. Los elementos involucrados son:
+### 2️⃣ Diagrama de Casos de Uso  
+- Identificar los **actores principales**:  
+  - **Administrador de Bodega**  
+  - **Jefe de Sucursal**  
+- Modelar los casos de uso:  
+  - **Solicitar insumos**  
+  - **Registrar ingreso de productos**  
+  - **Registrar venta**  
+  - **Actualizar stock**  
 
-- **Usuario**
-- **Página de Login**
-- **Servidor**
-- **Base de Datos**
-
-### 📌 Instrucciones:
-
-✅ Dibuja un **Diagrama de Secuencia UML**.
-✅ Representa las siguientes interacciones en orden:
-1️⃣ **El Usuario** ingresa sus credenciales en la **Página de Login**.
-2️⃣ La **Página de Login** envía los datos al **Servidor**.
-3️⃣ El **Servidor** consulta la **Base de Datos** para validar el usuario.
-4️⃣ La **Base de Datos** responde al **Servidor**.
-5️⃣ Si los datos son correctos, el **Servidor** permite el acceso; de lo contrario, muestra un error.
-✅ Usa los tipos de mensajes adecuados (`->`, `-->`, `-->>`).
+### 3️⃣ Diagrama de Secuencia  
+- Representar el flujo de una **solicitud de reposición** de una sucursal a la bodega central, incluyendo:  
+  - **Validaciones de stock**  
+  - **Confirmación del pedido**  
 
 ---
+
