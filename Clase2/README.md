@@ -20,9 +20,6 @@ Identificar los actores principales: Administrador de Bodega, Jefe de Sucursal.
 Modelar los casos de uso como Solicitar insumos, Registrar ingreso de productos, Registrar venta, Actualizar stock.
 Diagrama de Secuencia:
 Representar el flujo de una solicitud de reposición de una sucursal a la bodega central, incluyendo validaciones de stock y confirmación del pedido.
-- Representar el flujo de una **solicitud de reposición** de una sucursal a la bodega central, incluyendo:  
-  - **Validaciones de stock**  
-  - **Confirmación del pedido**  
 
----
+
 
