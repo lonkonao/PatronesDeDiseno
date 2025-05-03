@@ -180,3 +180,6 @@ Tu tarea será diseñar e implementar un sistema que permita emitir credenciales
 - `0,5` Decimas Martes 6 de mayo 2025 a las 23:59 hrs
 - En `Parejas` sin decimas Miercoles 7 de mayo 2025 a las 23:59 hrs
 - `Ìndividual` sin decimas Jueves 8 de mayo 2025 a las 23:59 hrs
+
+## Presentación vista en clases
+[Clase6](https://github.com/user-attachments/files/20020512/Clase6.pdf)
