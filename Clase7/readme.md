@@ -1,6 +1,6 @@
 # 🧠 Resumen de Clase: Patrones de Diseño - Adapter y Bridge
 
-Este documento resume todo lo trabajado en clase respecto a los patrones de diseño **Adapter** y **Bridge**, siguiendo una estructura pedagógica que incluye teoría, diagramas UML, ejemplos en Java y un ejercicio integrador final.
+Este documento resume todo lo trabajado en clase respecto a los patrones de diseño **Adapter** y **Bridge**,incluye teoría, diagramas UML.
 
 ---
 
