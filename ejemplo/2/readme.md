@@ -20,30 +20,37 @@ El sistema considera aspectos operacionales críticos en un entorno hospitalario
 ---
 
 ## 🔹 1. Diagrama de Casos de Uso UML
-<img width="487" alt="image" src="https://github.com/user-attachments/assets/f4678df9-8db4-4b01-889d-a83f02d67314" />
+![image](https://github.com/user-attachments/assets/0d7847bb-b6b0-468a-aecc-8855e2240684)
+
+
 
 ### Descripción general
-El análisis funcional permitió identificar con claridad los actores involucrados en el proceso de gestión de insumos médicos, junto con las funcionalidades críticas que el sistema debe soportar, alineadas a la normativa vigente.
+El análisis funcional permitió identificar con claridad los actores involucrados y las funcionalidades críticas del sistema. Además, se aplicaron correctamente **relaciones de `<<include>>` y `<<extend>>`** para reflejar flujos obligatorios y opcionales en el proceso.
 
 #### Actores identificados:
-- **Bodeguero**: Responsable del ingreso y egreso de insumos, validación de movimientos mediante códigos de barras, y consulta del stock operativo.
-- **Supervisor Médico**: Consulta de stock detallado, generación de reportes de alertas, trazabilidad por lote y dispositivo.
-- **Administrador del Sistema**: Encargado de la configuración general del sistema, administración de usuarios y permisos, y de la integración con el sistema ERP hospitalario.
-- **Auditor Externo**: Responsable de la revisión de auditoría de movimientos y generación de reportes de trazabilidad para control normativo.
-- **Sistema ERP Hospitalario**: Actor externo con el que se sincronizan datos críticos de movimientos y stock.
+- **Bodeguero**: Responsable de operaciones de ingreso y egreso de insumos, consulta de stock.
+- **Supervisor Médico**: Consulta stock, visualiza trazabilidad, genera reportes de alertas.
+- **Administrador del Sistema**: Configura el sistema, gestiona usuarios, integra con ERP, realiza auditorías.
+- **Auditor Externo**: Revisa auditoría de movimientos, accede a reportes de trazabilidad.
+- **Sistema ERP Hospitalario**: Actor externo con el que se sincronizan datos críticos.
 
-#### Casos de uso destacados:
-- **Ingreso de Insumos con Código de Barras**.
-- **Egreso Controlado de Insumos**.
-- **Alertas Automáticas por Stock Bajo o Vencimiento Próximo**.
-- **Visualización de Trazabilidad por Dispositivo/Lote**.
-- **Consulta Detallada de Stock por Bodega y Lote**.
-- **Generación de Reportes de Alertas**.
-- **Auditoría de Movimientos y Trazabilidad**.
-- **Generación de Reportes de Movimientos**.
-- **Configuración de Parámetros del Sistema**.
-- **Gestión de Usuarios y Permisos**.
-- **Integración con Sistema ERP Hospitalario**.
+#### Casos de uso destacados y relaciones aplicadas:
+- **Ingreso de Insumos con Código de Barras**
+  - `<<extend>>` **Alertas Automáticas por Stock Bajo o Vencimiento Próximo**: al ingresar insumos, puede opcionalmente activarse una alerta.
+- **Egreso Controlado de Insumos**
+  - `<<extend>>` **Alertas Automáticas por Stock Bajo o Vencimiento Próximo**: al egresar insumos, podría dispararse una alerta opcional.
+  - `<<extend>>` **Generación de Reportes de Movimientos**: se puede generar el reporte posterior al egreso como acción opcional.
+- **Consulta Detallada de Stock por Bodega y Lote**
+  - `<<extend>>` **Generación de Reportes de Alertas**: opcionalmente, tras consultar stock, se puede emitir un reporte.
+- **Auditoría de Movimientos y Trazabilidad**
+  - `<<include>>` **Generación de Reportes de Movimientos**: la generación de reportes es siempre parte del proceso de auditoría.
+- **Integración con Sistema ERP Hospitalario**
+  - Comunicación obligatoria con el actor **Sistema ERP Hospitalario** para sincronización.
+
+#### Justificación de las relaciones aplicadas:
+- Se utilizaron `<<include>>` en procesos donde el caso de uso base **siempre depende de otro caso obligatorio**, como en la **Auditoría de Movimientos y Trazabilidad**, que necesariamente genera un reporte.
+- Se aplicaron `<<extend>>` en procesos donde las acciones son **condicionadas o opcionales**, como la **generación de reportes tras egresos** o la **activación de alertas al ingresar o egresar insumos**.
+- Se reforzó la modularidad y claridad de los flujos mediante estas relaciones, cumpliendo con el nivel de detalle exigido en entornos profesionales.
 
 #### Relación destacada:
 El sistema se comunica con el **Sistema ERP Hospitalario** para sincronizar datos de movimientos, egresos e ingresos, garantizando integridad y trazabilidad en la cadena logística institucional.
